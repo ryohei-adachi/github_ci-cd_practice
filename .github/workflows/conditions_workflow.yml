@@ -2,7 +2,7 @@ name: Conditions workflow
 on: push
 jobs:
   skip-or-run:
-    if: ${{ github.actor == 'logintech12345' }}
+    if: ${{ github.actor == 'ryohei-adachi' }}
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello"
