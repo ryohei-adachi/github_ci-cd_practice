@@ -1,22 +1,19 @@
-name: Environments
-
+name: Environments2
 on:
   workflow_dispatch:
     inputs:
       environment-name:
-        description: 'Environment name'
+        type: environment
+        default: test
         required: false
-        default: 'test'
-
+        description: Environment name
 jobs:
   print:
     runs-on: ubuntu-latest
-    environment: ${{ github.event.inputs.environment-name }}  # この方法で入力を参照
+    environment: ${{ inputs.environment-name }}
     env:
-      USERNAME: ${{ secrets.USERNAME }}
+      USERNAME: ${{ vars.USERNAME }}
       PASSWORD: ${{ secrets.PASSWORD }}
     steps:
-      - run: echo "Username is set"  # セキュリティ保護されたシークレットのため表示は避けます
-      - run: |
-          echo "First character of password is: ${PASSWORD:0:1}"
-          echo "Rest of the password: ${PASSWORD#?}"
+      - run: echo "${USERNAME}"
+      - run: echo "${PASSWORD:0:1} ${PASSWORD#?}"
