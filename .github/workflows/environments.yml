@@ -7,7 +7,6 @@ on:
         default: test
         required: false
         description: Environment name
-
 jobs:
   print:
     runs-on: ubuntu-latest
