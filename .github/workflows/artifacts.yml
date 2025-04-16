@@ -6,7 +6,7 @@ jobs:
       steps:
         - run: date > date.txt
         - uses: actions/upload-artifact@v4
-            with:
+          with:
             name: uploaded
             path: date.txt
             retention-days: 7
