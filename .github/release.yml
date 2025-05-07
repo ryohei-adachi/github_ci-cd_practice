@@ -2,13 +2,13 @@ changelog:
   categories:
     - title: Enhancement
       labels:
-        - enhancement
+          - enhancement
     - title: Bug Fixs
       labels:
-        - bug
-        - fixes
+          - bug
+          - fixes
   exclude:
     labels:
-      - dependencies
+        - dependencies
     authors:
-      - dependabot
+        - dependabot
